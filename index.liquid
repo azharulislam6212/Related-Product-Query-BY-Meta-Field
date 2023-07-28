@@ -1,0 +1,18 @@
+    {% assign companions_products = product.metafields.custom.companions_products.value  %}
+     {% if companions_products != blank %}
+     <div class="related-product">
+    
+          <h3 class="related-product__heading">GREAT COMPANIONS</h3>
+        <ul class="related-product__list related-product__slider-js products ">
+          {% for companions_product in companions_products %}
+   
+              <li class="related-product__item">
+                {% render 'product-card' , product: companions_product %}
+              </li>
+
+            {%- endfor -%}
+           
+       </ul>
+
+    </div>
+  {% endif %} 
